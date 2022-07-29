@@ -12,7 +12,7 @@ Write & Download your Shopping List in a minute!
 4. CLEAR to remove  
 5. SAVE a screenshot.
 
-*Your list is saved to browser unless your hit **CLEAR** so you can go back and check on them anytime of the day.*
+*Your list is saved to browser unless your hit **CLEAR** so you can go back to them anytime of the day.*
 
 ## Project is build with 
 
