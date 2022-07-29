@@ -2,6 +2,9 @@
 
 Write & Download your Shopping List in a minute!
 
+[Link](https://baonguyenpham.github.io/shopping-list/)
+[Vietnamese version](https://baonguyenpham.github.io/di-cho/)
+
 ## How it works
 
 1. ENTER your shopping items
