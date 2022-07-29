@@ -3,7 +3,7 @@
 Write & Download your Shopping List in a minute!
 
 - [Link](https://baonguyenpham.github.io/shopping-list/)
-- [Vietnamese version](https://baonguyenpham.github.io/di-cho/)
+- [Vietnamese Version](https://baonguyenpham.github.io/di-cho/)
 
 ## How it works
 
@@ -72,4 +72,7 @@ if (listFromLocalStorage) {
 localStorage.clear()
 
 ```
+
+## See more
+- [To-do List](https://github.com/baonguyenpham/todo-list)
 
