@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFD39D;
+    font-size: 1.5rem;
+}
+
+/* typography */
+
+h1 {
+    text-align: center;
+    color: #fff;
+    text-shadow: 5px 5px #D39DFF ;
+}
+
+/* layout */
+
+.hero {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0 2rem;
+}
+
+.input-container {
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-container {
+    min-height: 400px; 
+    margin: 2rem auto;
+    padding: 1rem 3rem;
+    color: white;
+    font-weight: bold;
+    background-color: #9DFFD3;
+    border: 3px double #fff;
+}
+
+/* input field */
+
+.input-field, .btn {
+    box-shadow: 5px 5px #9DFFD3;
+    padding: 20px;
+}
+
+.input-field {
+    width: 100%;
+    border: 3px double #D39DFF;
+    margin-bottom: 1rem;
+}
+
+.input-field:hover, .btn:hover, btn:active {
+    box-shadow: 5px 5px #D39DFF;
+
+}
+
+/* button */
+
+.btn {
+    color: white;
+    background-color: #D39DFF; 
+    font-weight: bold;
+    border: none;
+}
+
+.btn:hover {
+    color: #000;
+    background: #9DFFD3;
+    cursor: pointer;
+}
+
+#input-btn, #clear-btn {
+    width: 200px;
+}
+
+#clear-btn {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.bottom-btn {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* desktop */
+
+@media (min-width: 600px) {
+    .hero {
+        width: 60%;
+    }
+}
