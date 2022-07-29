@@ -14,7 +14,7 @@ Write & Download your Shopping List in a minute!
 
 *Your list is saved to browser unless your hit **CLEAR** so you can go back to them anytime of the day.*
 
-## Project is build with 
+## Project is built with 
 
 ### Languages
 
