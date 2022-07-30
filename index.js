@@ -1,5 +1,7 @@
 let myList = []
 const inputEl = document.getElementById("input-el")
+const budgetEl = document.getElementById("budget-el")
+const myBudget = document.getElementById("my-budget")
 const inputBtn = document.getElementById("input-btn")
 const olEl = document.getElementById("ol-el")
 const clearBtn = document.getElementById("clear-btn")
@@ -42,7 +44,6 @@ function render(list) { // list is a parameter
     closeBtn[i].onclick = function() {
         this.parentNode.remove()
 
-
     }
 }
     
@@ -57,6 +58,8 @@ olEl.addEventListener("click", function(ev){ //ev is self click // can use any p
 
 clearBtn.addEventListener("click", function() {
     localStorage.clear()
+    myBudget.textContent = "Your budget today:" + ""
+    budgetEl.style.display = "block"
     myList = []
     render(myList)
     
@@ -66,6 +69,8 @@ clearBtn.addEventListener("click", function() {
 inputBtn.addEventListener("click", function() {
     myList.push(inputEl.value)
     inputEl.value ="" 
+    myBudget.textContent = "Your budget today: " + "$" + budgetEl.value
+    budgetEl.style.display = "none"
     
     localStorage.setItem("myList", JSON.stringify(myList))
     console.log(localStorage.getItem("myList"))
@@ -91,7 +96,3 @@ saveBtn.addEventListener("click", function() {
     render(myList)
     
 })
-
-
-
-
