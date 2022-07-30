@@ -6,23 +6,30 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #FFD39D;
-    font-size: 1.5rem;
+    font-size: 1.125rem;
+    font-family: 'Poppins', sans-serif;
+    color: #eee;
 }
-
-/* typography */
 
 h1 {
     text-align: center;
-    color: #fff;
     text-shadow: 5px 5px #D39DFF ;
+}
+
+h1, .btn {
+    color: #fff;
+}
+
+.radius {
+    border-radius: 8px;
 }
 
 /* layout */
 
 .hero {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
-    padding: 5rem 0;
+    padding: 2rem 0;
 }
 
 .input-container {
@@ -33,50 +40,52 @@ h1 {
 }
 
 .text-container {
-    min-height: 400px; 
-    margin: 2rem auto;
-    padding: 1rem 3rem;
-    color: white;
-    font-weight: bold;
+    min-height: 300px; 
+    margin: 2.5rem auto 1.5rem;
+    padding: 2rem 1rem;
+    color: #000;
     background-color: #9DFFD3;
-    border: 3px double #fff;
+    border: 5px solid #fff;
+}
+
+.shopping-list {
+    background: #fff;
+    min-height: 300px;
+    padding: 10px 1.5rem;
 }
 
 /* input field */
 
-.input-field, .btn {
-    box-shadow: 5px 5px #9DFFD3;
-    padding: 20px;
-}
-
 .input-field {
+    border: 4px double #000;
+    padding: 10px 20px;
     width: 100%;
-    border: 3px double #D39DFF;
-    margin-bottom: 1rem;
+    margin: 1.5rem;    
 }
 
-.input-field:hover, .btn:hover, btn:active {
-    box-shadow: 5px 5px #D39DFF;
-
+.input-field:hover, .input-field:active {
+    box-shadow: 0 0 0 5px #D39DFF;
 }
 
 /* button */
 
 .btn {
-    color: white;
     background-color: #D39DFF; 
     font-weight: bold;
     border: none;
+    box-shadow: 5px 5px #9DFFD3;
+    padding: 8px;
 }
 
-.btn:hover {
+.btn:hover, .btn:active {
     color: #000;
     background: #9DFFD3;
     cursor: pointer;
+    box-shadow: 5px 5px #D39DFF;  
 }
 
 #input-btn, #clear-btn {
-    width: 200px;
+    width: 120px;
 }
 
 #clear-btn {
@@ -84,16 +93,33 @@ h1 {
     margin-right: 1rem;
 }
 
-.bottom-btn {
+.btn-field {
     display: flex;
     justify-content: center;
+    padding-bottom: 1rem;
 }
 
 
 /* desktop */
 
-@media (min-width: 600px) {
+@media (min-width: 860px) {
+    body {
+        font-size: 1.5rem;
+    }
+
     .hero {
-        width: 60%;
+        width: 50%;
+    }
+
+    .btn-field {
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 10px;
+    }
+
+    #input-btn, #clear-btn {
+        width: 150px;
     }
 }
