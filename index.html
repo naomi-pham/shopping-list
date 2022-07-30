@@ -15,22 +15,29 @@
                 <h1>SHOPPING LIST</h1>
             </header>
             <main>
-                <div class="input-container radius">
-                    <input placeholder="Enter item" class="radius input-field" id="input-el" >
-                    <button class="btn radius" id="input-btn" >ADD</button>
-                </div>
+
+                <div class="input-container">
+                    <label for="" id="my-budget">Your budget today:</label>
+                    <input class=" input-budget" id="budget-el" >
+                    <label for="">Enter item</label>
+                    <input class=" input-field" id="input-el" >
+                    <button class="btn " id="input-btn" >ADD</button>
+                </div>         
+               
                 
-                <div class="text-container radius">
+                <div class="text-container">
+                        <ul id="ul-el">
+                        </ul>
                         <ol id="ol-el" >
                         </ol>  
                 </div>
                 
                 <div class="btn-field">
-                    <button class="btn radius" id="save-btn" >
+                    <button class="btn" id="save-btn" >
                         <i class="fa fa-save" aria-hidden="true"></i>
                     </button>
-                    <button class="btn radius" id="clear-btn" >CLEAR</button>
-                    <button class="btn radius" id="capture-btn" >
+                    <button class="btn " id="clear-btn" >CLEAR</button>
+                    <button class="btn " id="capture-btn" >
                         <i class="fa fa-camera-retro" aria-hidden="true"></i>
                     </button>        
                 </div>
