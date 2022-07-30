@@ -25,7 +25,7 @@ h1 {
 /* layout */
 
 .hero {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     padding: 2rem 0;
 }
@@ -39,7 +39,7 @@ h1 {
 
 .text-container {
     min-height: 300px; 
-    margin: 3rem auto 0;
+    margin: 3rem auto 2rem;
     padding: 1.5rem;
     color: #2f68b1;
     background-color: #f19483;
@@ -49,7 +49,7 @@ h1 {
 .shopping-list {
     background: #FFFFF0;
     min-height: 300px;
-    padding: 10px 1.5rem;
+    padding: 0;
 }
 
 /* input field */
@@ -98,6 +98,40 @@ h1 {
     display: flex;
     justify-content: center;
     padding-bottom: 1rem;
+}
+
+.close button {
+    background: #FFFFF0;
+    border: none;
+    color: #2F68B1;
+}
+
+.close button:hover {
+    color: #f19483;
+}
+
+
+/* li */
+
+ol {
+    list-style-type: none;
+    padding: 20px;
+}
+
+li {
+    padding: 15px 0;
+    border-bottom: 1px solid #3D3B30; 
+    display: flex;
+    justify-content: space-between;
+}
+
+li:hover {
+    cursor:pointer;
+}
+
+li.checked {
+    text-decoration: line-through;
+    color: #3D3B30;
 }
 
 
