@@ -4,22 +4,12 @@ const inputBtn = document.getElementById("input-btn")
 const olEl = document.getElementById("ol-el")
 const clearBtn = document.getElementById("clear-btn")
 const captureBtn = document.getElementById("capture-btn")
-const undoBtn = document.getElementById("undo-btn")
+const saveBtn = document.getElementById("save-btn")
 const listFromLocalStorage = JSON.parse(localStorage.getItem("myList"))
 let closeBtn = document.getElementsByClassName("close")
+const announce = document.getElementById("announce-box") 
+const announceCloseBtn = document.querySelectorAll("announce-close-btn")
 
-if (listFromLocalStorage) {
-    myList = listFromLocalStorage
-    render(myList)
-    
-}
-
-undoBtn.addEventListener("click", function() {
-    myList.pop()
-    render(myList)
-    console.log(myList)
-    
-})
 
 // https://code-boxx.com/take-screenshots-javascript/
 
@@ -51,7 +41,8 @@ function render(list) { // list is a parameter
     for (let i = 0; i < closeBtn.length; i++) {
     closeBtn[i].onclick = function() {
         this.parentNode.remove()
-        console.log(myList)
+
+
     }
 }
     
@@ -63,6 +54,7 @@ olEl.addEventListener("click", function(ev){ //ev is self click // can use any p
     }
 })
 
+
 clearBtn.addEventListener("click", function() {
     localStorage.clear()
     myList = []
@@ -73,11 +65,33 @@ clearBtn.addEventListener("click", function() {
 
 inputBtn.addEventListener("click", function() {
     myList.push(inputEl.value)
-    inputEl.value =""
+    inputEl.value ="" 
     
     localStorage.setItem("myList", JSON.stringify(myList))
     console.log(localStorage.getItem("myList"))
-    
     render(myList)
 })
+
+if (listFromLocalStorage) {
+    myList = listFromLocalStorage
+    render(myList)
+}
+
+saveBtn.addEventListener("click", function() {
+    announce.innerHTML = `
+    <p class="announce-text hidden">
+        Your list is saved!
+        <span >
+            <button class="announce-close" id="announce-close-btn">
+                \u00D7
+            </button>
+        </span>
+    </p>`
+
+    render(myList)
+    
+})
+
+
+
 
