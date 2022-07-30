@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.4/html2canvas.min.js"></script>  
+        <title>To Do List</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="hero" >
+            <header>
+                <h1>SHOPPING LIST</h1>
+            </header>
+            <main>
+
+                <div class="input-container">
+                    <label for="" id="my-budget">Your budget today:</label>
+                    <input class=" input-budget" id="budget-el" >
+                    <label for="">Enter item</label>
+                    <input class=" input-field" id="input-el" >
+                    <button class="btn " id="input-btn" >ADD</button>
+                </div>         
+               
+                
+                <div class="text-container">
+                        <ul id="ul-el">
+                        </ul>
+                        <ol id="ol-el" >
+                        </ol>  
+                </div>
+                
+                <div class="btn-field">
+                    <button class="btn" id="save-btn" >
+                        <i class="fa fa-save" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn " id="clear-btn" >CLEAR</button>
+                    <button class="btn " id="capture-btn" >
+                        <i class="fa fa-camera-retro" aria-hidden="true"></i>
+                    </button>        
+                </div>
+                
+                <div id="announce-box">        
+                </div>
+                
+            </main>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
