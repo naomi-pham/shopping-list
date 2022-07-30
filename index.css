@@ -7,17 +7,15 @@ html, body {
     padding: 0;
     background-color: #FFD39D;
     font-size: 1.125rem;
-    font-family: 'Poppins', sans-serif;
-    color: #eee;
+    font-family: 'Lora';
 }
 
 h1 {
     text-align: center;
-    text-shadow: 5px 5px #D39DFF ;
-}
-
-h1, .btn {
-    color: #fff;
+    text-shadow: 2px 2px #FFFFF0;
+    font-size: 3rem;
+    text-decoration: underline dotted;
+    color: #3D3B30;
 }
 
 .radius {
@@ -41,15 +39,15 @@ h1, .btn {
 
 .text-container {
     min-height: 300px; 
-    margin: 2.5rem auto 1.5rem;
-    padding: 2rem 1rem;
-    color: #000;
-    background-color: #9DFFD3;
-    border: 5px solid #fff;
+    margin: 3.5rem auto 0;
+    padding: 1.5rem;
+    color: #2f68b1;
+    background-color: #f19483;
+    border: 5px solid #FFFFF0;
 }
 
 .shopping-list {
-    background: #fff;
+    background: #FFFFF0;
     min-height: 300px;
     padding: 10px 1.5rem;
 }
@@ -57,31 +55,34 @@ h1, .btn {
 /* input field */
 
 .input-field {
-    border: 4px double #000;
+    background-color: #FFFFF0;
+    border: 4px solid #fff;
     padding: 10px 20px;
     width: 100%;
-    margin: 1.5rem;    
 }
 
 .input-field:hover, .input-field:active {
-    box-shadow: 0 0 0 5px #D39DFF;
+    box-shadow: 0 0 0 5px #f19483;
+    border: 4px solid #fff;
 }
 
 /* button */
 
 .btn {
-    background-color: #D39DFF; 
+    background-color: #2F68B1; 
+    color: #FFFFF0;
     font-weight: bold;
     border: none;
-    box-shadow: 5px 5px #9DFFD3;
+    box-shadow: 5px 5px #f19483;
     padding: 8px;
+    margin-top: 1rem;
 }
 
 .btn:hover, .btn:active {
-    color: #000;
-    background: #9DFFD3;
+    color: #3D3B30;
+    background: #f19483;
     cursor: pointer;
-    box-shadow: 5px 5px #D39DFF;  
+    box-shadow: 5px 5px #2F68B1;  
 }
 
 #input-btn, #clear-btn {
@@ -123,3 +124,4 @@ h1, .btn {
         width: 150px;
     }
 }
+
