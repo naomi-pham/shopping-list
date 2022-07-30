@@ -1,161 +1,93 @@
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #FFD39D;
-    font-size: 1.125rem;
-    font-family: 'Lora';
-}
-
-h1 {
-    text-align: center;
-    text-shadow: 2px 2px #FFFFF0;
-    font-size: 3rem;
-    text-decoration: underline dotted;
-    color: #3D3B30;
-}
-
-.radius {
-    border-radius: 8px;
-}
-
-/* layout */
-
-.hero {
-    width: 80%;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
-
-.input-container {
-    margin: 0 auto; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.text-container {
-    min-height: 300px; 
-    margin: 3rem auto 2rem;
-    padding: 1.5rem;
-    color: #2f68b1;
-    background-color: #f19483;
-    border: 5px solid #FFFFF0;
-}
-
-.shopping-list {
-    background: #FFFFF0;
-    min-height: 300px;
-    padding: 0;
-}
-
-/* input field */
-
-.input-field {
-    background-color: #FFFFF0;
-    border: 4px solid #fff;
-    padding: 10px 20px;
-    width: 100%;
-}
-
-.input-field:hover, .input-field:active {
-    box-shadow: 0 0 0 5px #f19483;
-    border: 4px solid #fff;
-}
-
-/* button */
-
-.btn {
-    background-color: #2F68B1; 
-    color: #FFFFF0;
-    font-weight: bold;
-    border: none;
-    box-shadow: 5px 5px #f19483;
-    padding: 8px;
-    margin-top: 1rem;
-}
-
-.btn:hover, .btn:active {
-    color: #3D3B30;
-    background: #f19483;
-    cursor: pointer;
-    box-shadow: 5px 5px #2F68B1;  
-}
-
-#input-btn, #clear-btn {
-    width: 120px;
-}
-
-#clear-btn {
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-.btn-field {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 1rem;
-}
-
-.close button {
-    background: #FFFFF0;
-    border: none;
-    color: #2F68B1;
-}
-
-.close button:hover {
-    color: #f19483;
-}
+let myList = []
+const inputEl = document.getElementById("input-el")
+const inputBtn = document.getElementById("input-btn")
+const olEl = document.getElementById("ol-el")
+const clearBtn = document.getElementById("clear-btn")
+const captureBtn = document.getElementById("capture-btn")
+const saveBtn = document.getElementById("save-btn")
+const listFromLocalStorage = JSON.parse(localStorage.getItem("myList"))
+let closeBtn = document.getElementsByClassName("close")
+const announce = document.getElementById("announce-box") 
+const announceCloseBtn = document.querySelectorAll("announce-close-btn")
 
 
-/* li */
+// https://code-boxx.com/take-screenshots-javascript/
 
-ol {
-    list-style-type: none;
-    padding: 20px;
-}
+captureBtn.addEventListener("click", function() {
+    html2canvas(document.body).then((canvas) => {
+    let a = document.createElement("a");
+    a.download = "shopping-list.png";
+    a.href = canvas.toDataURL("image/png");
+    a.click()
+  })
+})
 
-li {
-    padding: 15px 0;
-    border-bottom: 1px solid #3D3B30; 
-    display: flex;
-    justify-content: space-between;
-}
+function render(list) { // list is a parameter
+    let listItems = ""
+    
+    for (let i = 0; i < list.length; i++) {
+            listItems += `
+            <li> 
+                ${list[i]} 
+                <span class="close">
+                    <button>
+                        \u00D7
+                    </button>
+                </span>
+             </li>`
+        }   
+    olEl.innerHTML = listItems
+    
+    for (let i = 0; i < closeBtn.length; i++) {
+    closeBtn[i].onclick = function() {
+        this.parentNode.remove()
 
-li:hover {
-    cursor:pointer;
-}
 
-li.checked {
-    text-decoration: line-through;
-    color: #3D3B30;
-}
-
-
-/* desktop */
-
-@media (min-width: 860px) {
-    body {
-        font-size: 1.5rem;
-    }
-
-    .hero {
-        width: 50%;
-    }
-
-    .btn-field {
-        gap: 10px;
-    }
-
-    .btn {
-        padding: 10px;
-    }
-
-    #input-btn, #clear-btn {
-        width: 150px;
     }
 }
+    
+}
 
+olEl.addEventListener("click", function(ev){ //ev is self click // can use any parameter here
+    if(ev.target.tagName==="LI") {
+        ev.target.classList.toggle("checked") //toggle() method toggles between hide() & show()
+    }
+})
+
+
+clearBtn.addEventListener("click", function() {
+    localStorage.clear()
+    myList = []
+    render(myList)
+    
+
+})
+
+inputBtn.addEventListener("click", function() {
+    myList.push(inputEl.value)
+    inputEl.value ="" 
+    
+    localStorage.setItem("myList", JSON.stringify(myList))
+    console.log(localStorage.getItem("myList"))
+    render(myList)
+})
+
+if (listFromLocalStorage) {
+    myList = listFromLocalStorage
+    render(myList)
+}
+
+saveBtn.addEventListener("click", function() {
+    announce.innerHTML = `
+    <p class="announce-text hidden">
+        Your list is saved!
+        <span >
+            <button class="announce-close" id="announce-close-btn">
+                \u00D7
+            </button>
+        </span>
+    </p>`
+
+    render(myList)
+    
+})
