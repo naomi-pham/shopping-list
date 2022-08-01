@@ -124,6 +124,11 @@ function renderList(list) {
         </li>`
     }
     listItem.innerHTML = listItems
+    for (let i=0; i < closeBtn.length; i++) {
+      closeBtn[i].onclick = function() {
+        this.parentNode.remove()
+      }
+    }
     
     }
 
