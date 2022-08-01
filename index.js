@@ -117,7 +117,9 @@ function renderList(list) {
         <li>
           ${list[i]}
           <span class="close">
+          <button>
             \u00D7
+          </button>
           </span>
         </li>`
     }
