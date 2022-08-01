@@ -59,7 +59,7 @@ if (listFromLocalStorage) {
 if (budgetFromLocalStorage) {
   let budget = budgetFromLocalStorage
   budgetEl.textContent = "New budget: "
-  prevBudgetEl.textContent = "Your budget last time:" + " $" + budget
+  prevBudgetEl.textContent = "Your previous budget:" + " $" + budget
   prevBudgetEl.style.display = "block"
 }
 
@@ -102,7 +102,7 @@ submitBtn.addEventListener("click", function() {
     renderList(myList)
     renderPrice(myPrice)
     
-    budgetEl.textContent = "My budget:" + " $" + myBudget.value
+    budgetEl.textContent = "Your budget:" + " $" + myBudget.value
     
     
     let x = myBudget.value
@@ -145,7 +145,7 @@ function renderPrice(price) {
 clearBtn.addEventListener("click", function() {
     localStorage.clear()
     
-    budgetEl.textContent = "My budget:" 
+    budgetEl.textContent = "Your budget:" 
     sumEl.textContent = "" 
     myBudget.value = ""
     warningEl.textContent = ""
