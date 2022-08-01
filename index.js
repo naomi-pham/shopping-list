@@ -59,7 +59,7 @@ if (listFromLocalStorage) {
 if (budgetFromLocalStorage) {
   let budget = budgetFromLocalStorage
   budgetEl.textContent = "New budget: "
-  prevBudgetEl.textContent = "Your budget last time:" + " $" + budget
+  prevBudgetEl.textContent = "Your previous budget:" + " $" + budget
   prevBudgetEl.style.display = "block"
 }
 
