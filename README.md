@@ -1,78 +1,13 @@
-# Shopping List
+# cWgwyRhJ
 
-Write & Download your Shopping List in a minute!
+## About Scrimba
 
-- [Link](https://baonguyenpham.github.io/shopping-list/)
-- [Vietnamese Version](https://baonguyenpham.github.io/di-cho/)
+At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
+If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
+The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
 
-## How it works
+- [Our courses](https://scrimba.com/allcourses)
+- [The Frontend Career Path](https://scrimba.com/learn/frontend)
+- [Become a Scrimba Pro member](https://scrimba.com/pricing)
 
-1. ENTER your shopping items
-2. ADD them to note
-4. CLEAR to remove  
-5. SAVE a screenshot.
-
-*Your list is saved to browser unless your hit **CLEAR** so you can go back to them anytime of the day.*
-
-## Project is built with 
-
-### Languages
-
-- HTML/CSS
-- JavaScript
-  - AddEventListener()
-  - Push new value to array
-  - Log out values with for loop
-  - Create ordered list with innerHTML & template strings
-  - Render ordered list
-  - Local storage
-
-### Sample code
-
-#### When click **inputBtn** button, **push** new value to **myList** array, and **render** myList
-
-```JavaScript
-
-inputBtn.addEventListener("click", function() {
-    myList.push(inputEl.value)
-    inputEl.value =""
-    render(myList)
-})
-
-```
-
-#### Save, render out, and clear localStorage values
-
-##### Save and test
-
-```JavaScript
-
-localStorage.setItem("myList", JSON.stringify(myList)) // (key, value)
-console.log(localStorage.getItem("myList"))
-
-```
-
-##### Render out
-
-```JavaScript
-
-let listFromLocalStorage = JSON.parse(localStorage.getItem("myList"))
-
-if (listFromLocalStorage) {
-  myList = listFromLocalStorage
-  render(myList)
-}
-
-```
-
-##### Clear 
-
-```JavaScript
-
-localStorage.clear()
-
-```
-
-## See more
-- [To-do List](https://github.com/baonguyenpham/todo-list)
-
+Happy Coding!
