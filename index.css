@@ -88,9 +88,11 @@ ul {
   margin-left: 0; 
 }
 
+/*
 .flex-child-price {
   padding: 0;
 }
+*/
 
 .flex-child-list {
   flex-basis: 80%; 
@@ -107,11 +109,13 @@ ul {
   border-bottom: 2px solid #2F68B1;
 }
 
+/*
 .flex-child-price li {
   text-align: left;
   padding-left: 2px; 
   /*border-bottom: 4px solid pink;*/
 }
+*/
 
 li:hover {
     cursor:pointer;
@@ -133,9 +137,6 @@ li.checked::before {
     width: 6px;
 }
   
-
-
-
 
 
 /* input field */
@@ -230,7 +231,6 @@ label {
     padding: 8px 0;
     margin-bottom: 0;
     color: #2F68B1;
-    
 }
 
 .close button:hover {
