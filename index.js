@@ -49,6 +49,7 @@ const warningEl = document.getElementById("warning-el")
 
 // render localStorage
 
+/*
 
 if (priceFromLocalStorage) {
     let myPrice = priceFromLocalStorage
@@ -59,8 +60,9 @@ if (listFromLocalStorage) {
    let myList = listFromLocalStorage
    renderList(myList)
  }
-
-
+ 
+ */
+ 
 
 if (budgetFromLocalStorage) {
   let budget = budgetFromLocalStorage
@@ -204,9 +206,26 @@ inputBtn.addEventListener("click", function() {
 
 //function sumPrice
 
+/* function sum(numbers){
+  var x = numbers.reduce(function(prev,curr){
+    return curr + prev;
+  },0);
+  return x;
+}
+
+alert(sum([1,2,3]));
+alert(sum([])); */
+
+/* var sum = array.reduce(function(a, b){
+        return a + b;
+    }, 0); */
+
+
 
 function sumPrice(price) {
     let totalPrice = 0
+    sumEl.textContent = "Sum:" + " $" + "0"
+    warningEl.textContent = ""
     for (i = 0; i < price.length; i++) {
         totalPrice += Number(price[i])
         sumEl.textContent = "Sum:" + " $" + totalPrice
@@ -214,7 +233,6 @@ function sumPrice(price) {
               
         let y = totalPrice
         localStorage.setItem("Sum",y.toString())
-        
         if (totalPrice <= Number(myBudget.value)) {
             warningEl.textContent = "You're within budget. Happy shopping! 😍"
         } else {
